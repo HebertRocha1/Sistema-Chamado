@@ -1,112 +1,83 @@
-Studenty – Sistema de Chamados Acadêmicos
+Studenty
 
-O Studenty é uma plataforma web desenvolvida com o objetivo de aproximar alunos e professores por meio de um sistema de chamados acadêmicos. A proposta é oferecer um ambiente simples, organizado e intuitivo para que dúvidas, problemas e solicitações relacionadas às disciplinas possam ser registradas, acompanhadas e resolvidas de forma eficiente.
+Sistema web de gerenciamento de chamados acadêmicos desenvolvido em Python, utilizando Flask e SQLite, com foco na comunicação entre alunos e professores por meio de uma plataforma simples, organizada e intuitiva.
 
-Mais do que um sistema de abertura de chamados, o projeto busca simular um ambiente acadêmico real, no qual cada usuário possui responsabilidades e permissões específicas, tornando a experiência mais próxima de uma aplicação utilizada em instituições de ensino.
+Sobre o Projeto
 
-📌 Objetivos do Projeto
+O Studenty foi desenvolvido com o objetivo de centralizar o gerenciamento de solicitações acadêmicas entre alunos e professores. A aplicação permite registrar, acompanhar e responder chamados relacionados às disciplinas, proporcionando uma comunicação mais eficiente dentro do ambiente escolar.
 
-Este projeto foi desenvolvido como forma de aplicar conceitos de desenvolvimento web e banco de dados, integrando diferentes áreas da programação em uma única aplicação.
+O projeto simula um cenário real de uma instituição de ensino, implementando diferentes perfis de usuários, controle de permissões, autenticação, notificações e registro das principais ações realizadas no sistema.
 
-Durante o desenvolvimento foram explorados temas como:
+Objetivos
+
+Este projeto foi desenvolvido para aplicar conceitos de desenvolvimento web, banco de dados e engenharia de software, abordando temas como:
 
 Desenvolvimento Back-end com Python e Flask;
-Banco de dados relacional utilizando SQLite;
+Modelagem de banco de dados relacional;
 Controle de acesso por níveis de usuário;
 Autenticação com armazenamento seguro de senhas;
-Organização de código utilizando Blueprints;
-Comunicação entre usuários por meio de mensagens;
-Registro de auditoria e notificações;
-Modelagem de um sistema baseado em regras de negócio.
-✨ Funcionalidades
-👨‍🎓 Área do Aluno
+Organização da aplicação utilizando Blueprints;
+Comunicação entre usuários por meio de chamados;
+Registro de notificações e auditoria.
+Funcionalidades
+Aluno
+Login na plataforma;
+Matrícula em disciplinas;
+Abertura de chamados;
+Acompanhamento do status das solicitações;
+Histórico de chamados;
+Troca de mensagens com o professor;
+Recebimento de notificações.
+Professor
+Visualização dos chamados das disciplinas sob sua responsabilidade;
+Resposta aos chamados;
+Atualização do status das solicitações;
+Envio de retorno técnico;
+Gerenciamento de disciplinas;
+Visualização de estatísticas dos atendimentos.
+Administrador
+Gerenciamento de usuários;
+Promoção de alunos para professores;
+Visualização dos registros de auditoria;
+Acompanhamento geral do sistema.
+Controle de Acesso
 
-O aluno possui acesso a um painel personalizado onde pode:
-
-Visualizar suas disciplinas;
-Realizar matrícula em novas matérias;
-Abrir chamados para professores;
-Acompanhar o andamento de cada solicitação;
-Conversar com o professor através do próprio chamado;
-Receber notificações sempre que houver atualizações.
-👨‍🏫 Área do Professor
-
-Cada professor possui acesso apenas aos chamados relacionados às disciplinas sob sua responsabilidade.
-
-Entre suas funcionalidades estão:
-
-Visualizar chamados recebidos;
-Responder alunos;
-Atualizar o status dos chamados;
-Adicionar retornos técnicos;
-Gerenciar disciplinas;
-Acompanhar estatísticas dos atendimentos.
-👨‍💼 Área Administrativa
-
-O administrador é responsável pelo gerenciamento geral do sistema.
-
-Seu painel permite:
-
-Visualizar usuários cadastrados;
-Promover alunos para professores;
-Acompanhar registros de auditoria;
-Monitorar informações gerais da aplicação.
-🔒 Controle de Acesso
-
-O sistema utiliza autenticação baseada em sessões e separa os usuários em três perfis distintos:
+O sistema possui três níveis de permissão:
 
 Aluno
 Professor
 Administrador
 
-Cada perfil possui permissões específicas, garantindo que cada usuário visualize apenas as funcionalidades necessárias para sua função.
+Cada perfil possui acesso apenas às funcionalidades compatíveis com sua função.
 
-💬 Sistema de Chamados
+Sistema de Chamados
 
-Cada chamado reúne todas as informações relacionadas a uma solicitação acadêmica, incluindo:
+Cada chamado contém:
 
-título;
-descrição do problema;
-disciplina vinculada;
-professor responsável;
-histórico de mensagens;
-retorno técnico;
-data de criação;
-situação atual.
+Título;
+Descrição do problema;
+Disciplina relacionada;
+Professor responsável;
+Histórico de mensagens;
+Retorno técnico;
+Data de criação;
+Status.
 
-Os chamados podem assumir os seguintes estados:
+Os estados possíveis de um chamado são:
 
-Aberto
-Em andamento
-Aguardando
-Finalizado
-
-Essa estrutura permite acompanhar todo o ciclo de atendimento desde sua abertura até sua conclusão.
-
-🔔 Notificações
-
-Sempre que um chamado sofre alguma atualização importante, como alteração de status ou resposta do professor, o aluno é informado por meio do sistema de notificações.
-
-Essa funcionalidade mantém a comunicação organizada sem a necessidade de consultas constantes ao painel.
-
-📋 Auditoria
-
-As ações administrativas são registradas automaticamente, permitindo manter um histórico das alterações realizadas no sistema.
-
-Esse recurso contribui para maior transparência e controle sobre operações importantes.
-
-🛠 Tecnologias Utilizadas
-
-O projeto foi desenvolvido utilizando as seguintes tecnologias:
-
+Aberto;
+Em andamento;
+Aguardando;
+Finalizado.
+Tecnologias Utilizadas
 Python
 Flask
 SQLite
 HTML5
 CSS3
 Jinja2
-Werkzeug (Hash de Senhas)
-🗂 Estrutura do Projeto
+Werkzeug
+Estrutura do Projeto
 studenty/
 │
 ├── static/
@@ -115,10 +86,7 @@ studenty/
 ├── app.py
 ├── studenty.db
 └── requirements.txt
-
-A organização do projeto segue uma estrutura modular, facilitando futuras manutenções e expansões da aplicação.
-
-🚀 Como Executar
+Como Executar
 
 Clone o repositório:
 
@@ -150,30 +118,12 @@ Execute a aplicação:
 
 python app.py
 
-Após a inicialização, o sistema estará disponível em:
+A aplicação estará disponível em:
 
 http://127.0.0.1:5000
-💡 Aprendizados
 
-O desenvolvimento deste projeto permitiu consolidar conhecimentos em desenvolvimento web utilizando Python, além de proporcionar experiência prática com autenticação, arquitetura MVC, manipulação de banco de dados, organização de código, controle de permissões e construção de aplicações voltadas para problemas reais.
+Autor
 
-Também foi uma oportunidade para compreender como diferentes perfis de usuários interagem dentro de um mesmo sistema e como estruturar regras de negócio de forma clara e segura.
+Hebert Rocha
 
-🔮 Melhorias Futuras
-
-Entre as evoluções planejadas para o projeto estão:
-
-Upload de arquivos nos chamados;
-Envio de notificações por e-mail;
-Dashboard com gráficos e indicadores;
-Pesquisa e filtros avançados;
-API REST para integração com outros sistemas;
-Migração para PostgreSQL;
-Interface totalmente responsiva;
-Recuperação de senha;
-Histórico completo de atividades dos usuários.
-👨‍💻 Autor
-
-Desenvolvido por Hebert Rocha como projeto acadêmico com foco na aplicação prática de conceitos de desenvolvimento web, banco de dados relacionais e engenharia de software.
-
-O projeto representa a integração entre programação, organização de processos e boas práticas de desenvolvimento, buscando oferecer uma solução funcional para o gerenciamento de chamados no ambiente escolar.
+Projeto desenvolvido com o objetivo de consolidar conhecimentos em desenvolvimento web utilizando Python, Flask e SQLite, simulando um sistema de gerenciamento de chamados aplicado ao contexto acadêmico.
